@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.bg {
+    /* play around with this */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent), url(images/hero_img.png);
+    width: 100%;
+    padding-bottom: 20%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.nav {
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: black;
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 30%, transparent 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+/* How can I add an image here? */
+.nav_logo{
+    /* image: url(images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 3rem;
+    width: auto;
+    display: inline-block; */
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 3rem;
+    color: white;
+}
+
+.nav_menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .nav_menu ul li {
+    list-style: none;
+  }
+  
+  .nav_menu ul li a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .nav_menu li:hover {
+    background: linear-gradient(rgba(255, 255, 255, 0.40), transparent);
+    transition-delay: 1s; /*This is not working for some reasion*/
+  }
+  .nav_menu li a:hover {
+    color: #9E829C;
+    transition: ease 0.5s;
+  }
+
+
+
+
+  .hero-content{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* margin-top: 5rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5rem;
+  }
+
+  .hero-content h1{
+    font-size: 8rem;
+    color: white;
+    /* padding-left: 10rem; */
+  }
+  .hero-content p{
+    /* margin: 10px 0 30px; */
+    font-size: 3rem;
+    color: white;
+
+  }
