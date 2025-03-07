@@ -1,34 +1,77 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.125rem;
 }
+
+
+img {
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  transition-duration: 0.5s;
+}
+
+img:hover {
+  box-shadow: 10px 10px 10px black;
+}
+
+
 
 
 .bg {
     /* play around with this */
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent), url(images/hero_img.png);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent), url(images/hero_img.png);
     width: 100%;
-    padding-bottom: 20%;
+    /* height: auto; */
+    height: 68rem;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     display: flex;
     align-items: flex-start;
+    background-attachment: fixed;
 }
 
+
+
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
 .nav {
-    height: 7rem;
+    height: 8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
     background-color: black;
-    background: linear-gradient(to bottom, rgb(0, 0, 0) 30%, transparent 100%);
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 40%, transparent 100%);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
     width: 100%;
 }
 
@@ -40,10 +83,11 @@ body {
     height: 3rem;
     width: auto;
     display: inline-block; */
-    font-size: 1.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-family: italic;
     padding: 3rem;
     color: white;
+    margin-bottom: 1.5rem;
 }
 
 .nav_menu ul {
@@ -56,16 +100,18 @@ body {
   }
   
   .nav_menu ul li a {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     color: white;
     padding: 3rem;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    animation: 1s ease-out 0s 1 slideInFromTop;
+    /* display: flex;
+    flex-wrap: wrap; */
   }
   .nav_menu li:hover {
     background: linear-gradient(rgba(255, 255, 255, 0.40), transparent);
-    transition-delay: 1s; /*This is not working for some reasion*/
+    transition: ease 0.5s;
   }
   .nav_menu li a:hover {
     color: #9E829C;
@@ -76,22 +122,154 @@ body {
 
 
   .hero-content{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* margin-top: 5rem; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 5rem;
+    max-width: 50%;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
   }
 
   .hero-content h1{
     font-size: 8rem;
     color: white;
-    /* padding-left: 10rem; */
+    padding-top: 3rem;
   }
   .hero-content p{
     /* margin: 10px 0 30px; */
     font-size: 3rem;
     color: white;
-
+    margin-top: 0;
+    padding-bottom: 2rem;
   }
+
+
+
+
+  .title {
+    padding: 0.5rem;
+    margin: 0;
+    background: linear-gradient(to top, #361C35, black);
+    background-size: cover;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+    transition-duration: 0.5s;
+  }
+  .title:hover {
+    font-size: 3rem;
+  }
+
+  #about-me{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #9E829C;
+    font-size: 1.75rem;
+    /* width: 100% */
+  }
+  #about-me p {
+    max-width: 50%;
+    transition-duration: 0.5s;
+  }
+  #about-me p:hover{
+    font-weight: 400;
+    text-shadow: 2px 2px 8px #361C35;
+  }
+
+
+
+  #hobbies-container {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #9E829C;
+  }
+
+  .hobbies {
+    color: white;
+    width: 16rem;
+    height: 16rem;
+    padding: 4rem;
+    margin-bottom: 2rem;
+    border-radius: 50px;
+    box-shadow: 30px 30px 50px black;
+    background-size: cover;
+    text-align: center;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+
+.hobbies.music{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(images/music.webp);
+}
+.hobbies.music:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9)), url(images/music.webp);
+}
+
+.hobbies.art{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(images/art.jpg);
+}
+.hobbies.art:hover{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9)), url(images/art.jpg);
+}
+
+.hobbies.photography{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(images/photography.jpg);
+}
+.hobbies.photography:hover{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9)), url(images/photography.jpg);
+}
+
+.hobbies.songwriting{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(images/songwriting.jpg);
+}
+.hobbies.songwriting:hover{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9)), url(images/songwriting.jpg);
+}
+
+
+
+
+.hobbies:hover h2{
+  display: none;
+}
+.hobbies:hover h4{
+  display: none;
+}
+.hobbies p{
+  font-size: 1.25rem;
+  opacity: 0;
+}
+.hobbies:hover p{
+  opacity: 100;
+  transition: opacity 0.75s ease-out;
+  animation: 0.5s ease-out 0s 1 slideInFromTop;
+}
+.hobbies button{
+  display: none;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #9E829C;
+  border-radius: 15px;
+  box-shadow: 5px 5px 20px black;
+  color: black;
+  transition-duration: 0.25s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hobbies button:hover{
+  background-color: #361C35;
+  color: white;
+  cursor: pointer;
+  /* add transition? but idk how to do this for some reason */
+}
+.hobbies:hover button{
+  display: inline;
+  animation: 0.25s ease-out 0s 1 slideInFromLeft;
+}
