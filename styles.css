@@ -21,7 +21,6 @@ img:hover {
 
 
 .bg {
-    /* play around with this */
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent), url(images/hero_img.png);
     width: 100%;
     /* height: auto; */
@@ -33,6 +32,8 @@ img:hover {
     display: flex;
     align-items: flex-start;
     background-attachment: fixed;
+    /* how do i add divs with space in between them such that I can see the background as i scroll between divs */
+    /* also scrolling animations */
 }
 
 
@@ -62,6 +63,7 @@ img:hover {
 
 
 .nav {
+    /* how do i make the height dependent on width of the window? */
     height: 8rem;
     display: flex;
     justify-content: space-between;
@@ -77,12 +79,6 @@ img:hover {
 
 /* How can I add an image here? */
 .nav_logo{
-    /* image: url(images/logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 3rem;
-    width: auto;
-    display: inline-block; */
     font-size: 2rem;
     font-family: italic;
     padding: 3rem;
@@ -94,6 +90,7 @@ img:hover {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
   }
   .nav_menu ul li {
     list-style: none;
@@ -106,8 +103,8 @@ img:hover {
     display: block;
     margin-bottom: 1.5rem;
     animation: 1s ease-out 0s 1 slideInFromTop;
-    /* display: flex;
-    flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
   }
   .nav_menu li:hover {
     background: linear-gradient(rgba(255, 255, 255, 0.40), transparent);
@@ -151,6 +148,7 @@ img:hover {
     padding: 0.5rem;
     margin: 0;
     background: linear-gradient(to top, #361C35, black);
+    /* wanted this background to fade from transparent to color but its showing up as white */
     background-size: cover;
     font-size: 2.5rem;
     text-align: center;
@@ -182,7 +180,6 @@ img:hover {
   }
 
 
-
   #hobbies-container {
     padding: 2rem;
     display: flex;
@@ -203,6 +200,7 @@ img:hover {
     text-align: center;
     font-size: 1.5rem;
     align-items: center;
+    /* add a transition delay to everything within hobbies */
 }
 
 
@@ -211,6 +209,8 @@ img:hover {
 }
 .hobbies.music:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9)), url(images/music.webp);
+  /* Is there an easier way to darken the image background without changing the content? */
+  /* Also add a fade transition? */
 }
 
 .hobbies.art{
@@ -234,9 +234,6 @@ img:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.9)), url(images/songwriting.jpg);
 }
 
-
-
-
 .hobbies:hover h2{
   display: none;
 }
@@ -249,8 +246,9 @@ img:hover {
 }
 .hobbies:hover p{
   opacity: 100;
-  transition: opacity 0.75s ease-out;
+  transition: opacity 0.5s ease-out;
   animation: 0.5s ease-out 0s 1 slideInFromTop;
+  transition-delay: 0.1s;
 }
 .hobbies button{
   display: none;
@@ -260,7 +258,7 @@ img:hover {
   border-radius: 15px;
   box-shadow: 5px 5px 20px black;
   color: black;
-  transition-duration: 0.25s;
+  transition-duration: 1s;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .hobbies button:hover{
